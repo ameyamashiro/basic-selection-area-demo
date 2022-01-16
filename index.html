@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MakeMVP Demo</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            border-style: none;
+            width: 150px;
+            height: 50px;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 640px;
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .wrapper::before {
+            content: '';
+            padding-top: calc(300 / 640 * 100%);
+            display: block;
+        }
+
+        .step {
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .term-button {
+            flex: calc(100% / 3 - 3em);
+            margin: 1.5em;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .complete-text {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="step active">
+            <button class="term-button" type="button" data-value="選択肢1">Step1: ボタン1</button>
+            <button class="term-button" type="button" data-value="選択肢2">Step1: ボタン2</button>
+            <button class="term-button" type="button" data-value="選択肢3">Step1: ボタン3</button>
+            <button class="term-button" type="button" data-value="選択肢4">Step1: ボタン4</button>
+            <button class="term-button" type="button" data-value="選択肢5">Step1: ボタン5</button>
+            <button class="term-button" type="button" data-value="選択肢6">Step1: ボタン6</button>
+        </div>
+        <div class="step">
+            <button class="term-button" type="button" data-value="選択肢1">Step2: ボタン1</button>
+            <button class="term-button" type="button" data-value="選択肢2">Step2: ボタン2</button>
+            <button class="term-button" type="button" data-value="選択肢3">Step2: ボタン3</button>
+            <button class="term-button" type="button" data-value="選択肢4">Step2: ボタン4</button>
+            <button class="term-button" type="button" data-value="選択肢5">Step2: ボタン5</button>
+            <button class="term-button" type="button" data-value="選択肢6">Step2: ボタン6</button>
+        </div>
+        <div class="step">
+            <button class="term-button" type="button" data-value="選択肢1">Step3: ボタン1</button>
+            <button class="term-button" type="button" data-value="選択肢2">Step3: ボタン2</button>
+            <button class="term-button" type="button" data-value="選択肢3">Step3: ボタン3</button>
+            <button class="term-button" type="button" data-value="選択肢4">Step3: ボタン4</button>
+            <button class="term-button" type="button" data-value="選択肢5">Step3: ボタン5</button>
+            <button class="term-button" type="button" data-value="選択肢6">Step3: ボタン6</button>
+        </div>
+        <div class="step">
+            <button class="term-button" type="button" data-value="選択肢1">Step4: ボタン1</button>
+            <button class="term-button" type="button" data-value="選択肢2">Step4: ボタン2</button>
+            <button class="term-button" type="button" data-value="選択肢3">Step4: ボタン3</button>
+            <button class="term-button" type="button" data-value="選択肢4">Step4: ボタン4</button>
+            <button class="term-button" type="button" data-value="選択肢5">Step4: ボタン5</button>
+            <button class="term-button" type="button" data-value="選択肢6">Step4: ボタン6</button>
+        </div>
+        <div class="step">
+            <button class="term-button" type="button" data-value="選択肢1">Step5: ボタン1</button>
+            <button class="term-button" type="button" data-value="選択肢2">Step5: ボタン2</button>
+            <button class="term-button" type="button" data-value="選択肢3">Step5: ボタン3</button>
+            <button class="term-button" type="button" data-value="選択肢4">Step5: ボタン4</button>
+            <button class="term-button" type="button" data-value="選択肢5">Step5: ボタン5</button>
+            <button class="term-button" type="button" data-value="選択肢6">Step5: ボタン6</button>
+        </div>
+        <div class="step">
+            <button class="term-button" type="button" data-value="選択肢1">Step6: ボタン1</button>
+            <button class="term-button" type="button" data-value="選択肢2">Step6: ボタン2</button>
+            <button class="term-button" type="button" data-value="選択肢3">Step6: ボタン3</button>
+            <button class="term-button" type="button" data-value="選択肢4">Step6: ボタン4</button>
+            <button class="term-button" type="button" data-value="選択肢5">Step6: ボタン5</button>
+            <button class="term-button" type="button" data-value="選択肢6">Step6: ボタン6</button>
+        </div>
+        <div class="step">
+            <button class="term-button" type="button" data-value="選択肢1">Step7: ボタン1</button>
+            <button class="term-button" type="button" data-value="選択肢2">Step7: ボタン2</button>
+            <button class="term-button" type="button" data-value="選択肢3">Step7: ボタン3</button>
+            <button class="term-button" type="button" data-value="選択肢4">Step7: ボタン4</button>
+            <button class="term-button" type="button" data-value="選択肢5">Step7: ボタン5</button>
+            <button class="term-button" type="button" data-value="選択肢6">Step7: ボタン6</button>
+        </div>
+        <div class="step">
+            <div class="complete-text">
+                選択完了した時に表示するやつ
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let step = 0 // 0~
+        const selectedValues = []
+        const maxStep = document.querySelectorAll('.step').length - 1
+
+        ;[...document.querySelectorAll('.step .term-button')].forEach(t => t.addEventListener('click', e => {
+
+            console.log(e.target.dataset.value)
+            selectedValues.push(e.target.dataset.value)
+
+            // ステップを進める
+            step++
+
+            // 表示切り替え
+            document.querySelector('.step.active').classList.remove('active')
+            document.querySelectorAll('.step')[step].classList.add('active')
+
+            if (step === maxStep) {
+                // 完了時
+                alert(selectedValues.join(', '))
+            }
+        }))
+    </script>
+</body>
+</html>
